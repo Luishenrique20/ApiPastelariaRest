@@ -1,5 +1,9 @@
+# import da persistência
+import db
+from mod_funcionario.FuncionarioModel import FuncionarioDB
 from fastapi import APIRouter
 from mod_funcionario.Funcionario import Funcionario
+
 
 router = APIRouter()
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
@@ -23,3 +27,28 @@ def put_funcionario(id: int, f: Funcionario):
 @router.delete("/funcionario/{id}", tags=["Funcionário"])
 def delete_funcionario(id: int):
     return {"msg": "delete executado"}, 201
+
+@router.get("/funcionario/", tags=["Funcionário"])
+
+def get_funcionario():
+    try:
+        session = db.Session()
+        # busca todos
+        dados = session.query(FuncionarioDB).all()
+        return dados, 200
+    except Exception as e:
+        return {"erro": str(e)}, 400
+    finally:
+        session.close()
+
+@router.get("/funcionario/{id}", tags=["Funcionário"])
+def get_funcionario(id: int):
+    try:
+        session = db.Session()
+        # busca um com filtro
+        dados = session.query(FuncionarioDB).filter(FuncionarioDB.id_funcionario == id).all()
+        return dados, 200
+    except Exception as e:
+        return {"erro": str(e)}, 400
+    finally:
+        session.close()
