@@ -9,11 +9,10 @@ POST http://127.0.0.1:8000/produto/ HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "pastel",
-    "descricao" : "queijo",
-    "valor_unitario" : 10,
-    "foto" : "luiciano"
-
+    "nome" : "Pastel",
+    "descricao" : "carne",
+    "foto" : "foto",
+    "valor_unit" : 12
 }
 
 ### Verbo PUT – atualiza
@@ -21,12 +20,11 @@ PUT http://127.0.0.1:8000/produto/2 HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "pastel",
-    "descricao" : "carne",
-    "valor_unitario" : 10,
-    "foto" : "luiciano"
+    "nome" : "Pastel ",
+    "descricao" : "queijo",
+    "foto" : "foto",
+    "valor_unit" : 14
 }
-
 
 ### Verbo DELETE - excluir
 DELETE http://127.0.0.1:8000/produto/3 HTTP/1.1

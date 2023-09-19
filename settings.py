@@ -16,6 +16,7 @@ RELOAD = os.getenv("RELOAD")
 # Configurações banco de dados
 DB_SGDB = os.getenv("DB_SGDB")
 DB_NAME = os.getenv("DB_NAME")
+
 # Caso seja diferente de sqlite
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
