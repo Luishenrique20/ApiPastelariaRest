@@ -5,4 +5,4 @@ class Produto(BaseModel):
     nome: str
     descricao: str
     foto: int
-    valor_decimal: int = None
+    valor_unit: int = None

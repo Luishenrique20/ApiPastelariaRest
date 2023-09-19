@@ -5,9 +5,6 @@ from mod_produto.ProdutoModel import ProdutoDB
 from fastapi import APIRouter
 from mod_produto.Produto import Produto
 
-# import da segurança
-from fastapi import Depends
-
 router = APIRouter( )
 
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
@@ -39,11 +36,11 @@ def get_produto(id: int):
         session.close()
 
 @router.post("/produto/", tags=["Produto"])
-def post_produto(f: Produto):
+def post_produto(corpo: Produto):
     try:
         session = db.Session()
 
-        dados = ProdutoDB(None, f.nome, f.descricao, f.foto, f.valor_decimal)
+        dados = ProdutoDB(None, corpo.nome, corpo.descricao, corpo.foto, corpo.valor_unit)
 
         session.add(dados)
 
@@ -68,7 +65,7 @@ def put_produto(id: int, corpo: Produto):
         dados.nome = corpo.nome
         dados.descricao = corpo.descricao
         dados.foto = corpo.foto
-        dados.valor_decimal = corpo.valor_decimal
+        dados.valor_unit = corpo.valor_unit
 
         session.add(dados)
         session.commit()

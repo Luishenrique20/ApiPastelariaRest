@@ -9,12 +9,12 @@ POST http://127.0.0.1:8000/cliente/ HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "Cliente Teste",
-    "cpf" : "12345678900",
-    "telefone" : "12345678901",
-    "marca_fiado" : false,
+    "nome" : "Luistest",
+    "cpf" : "12345",
+    "telefone" : "1000",
+    "compra_fiado" : 2,
     "dia_fiado" : 5,
-    "senha" : "senhaclienteteste"
+    "senha" : "Luishenrique"
 }
 
 ### Verbo PUT – atualiza
@@ -22,10 +22,10 @@ PUT http://127.0.0.1:8000/cliente/2 HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "Cliente Teste Fiado",
-    "cpf" : "00987654321",
-    "telefone" : "10987654321",
-    "marca_fiado" : true,
+    "nome" : "Paulo",
+    "cpf" : "10000000000",
+    "telefone" : "937485326458",
+    "compra_fiado" : true,
     "dia_fiado" : 5,
     "senha" : "senhaclientetestefiado"
 }

@@ -12,7 +12,7 @@ content-type: application/json
     "nome" : "Pastel",
     "descricao" : "carne",
     "foto" : "foto",
-    "valor_unit" : 12
+    "valor_unit" : 12,
 }
 
 ### Verbo PUT – atualiza

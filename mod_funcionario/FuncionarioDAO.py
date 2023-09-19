@@ -6,10 +6,6 @@ from mod_funcionario.FuncionarioModel import FuncionarioDB
 from fastapi import APIRouter
 from mod_funcionario.Funcionario import Funcionario
 
-# import da segurança
-from fastapi import Depends
-
-
 router = APIRouter()
 
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE

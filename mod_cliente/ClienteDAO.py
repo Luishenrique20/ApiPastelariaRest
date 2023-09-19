@@ -4,10 +4,6 @@ from mod_cliente.ClienteModel import ClienteDB
 from fastapi import APIRouter
 from mod_cliente.Cliente import Cliente
 
-# import da segurança
-from fastapi import Depends
-
-
 router = APIRouter()
 
 # Criar os endpoints de Cliente: GET, POST, PUT, DELETE
